@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySmart</title>
+    <meta name="theme-color" content="#071329" />
+    <meta name="description" content="StudySmart student learning workspace" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="./studysmart-icon.svg" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="StudySmart" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <main class="shell">
+        <header>
+          <img
+            class="appicon"
+            src="./studysmart-icon.svg"
+            alt="StudySmart icon"
+          />
+          <div>
+            <small>YOUR PERSONAL STUDY PARTNER</small>
+            <h1>StudySmart</h1>
+          </div>
+          <b class="free">FREE TO START</b>
+        </header>
+        <section class="hero">
+          <h2>Learn smarter.<br /><span>Build your future.</span></h2>
+          <p>
+            Notes, quizzes, photo question help, essays, revision plans and your
+            student library in one place.
+          </p>
+          <div class="quick-links">
+            <button data-jump="photo">📷 Photo Solver</button
+            ><button data-jump="library">📚 My Library</button
+            ><button data-jump="planner">▦ Planner</button
+            ><button data-jump="meetings">🎥 Meetings</button>
+          </div>
+        </section>
+        <section class="workspace">
+          <article class="panel" id="photo">
+            <label>Subject</label
+            ><input id="subject" placeholder="e.g. Computer Studies" /><label
+              >Topic or question</label
+            ><textarea
+              id="topic"
+              rows="3"
+              placeholder="What are you studying?"
+            ></textarea
+            ><label>Study level</label
+            ><select id="level">
+              <option>Beginner</option>
+              <option>High school</option>
+              <option>University</option>
+              <option>Exam revision</option></select
+            ><label>Study tool</label>
+            <div class="tools">
+              <button class="tool active" data-kind="notes">Study notes</button
+              ><button class="tool" data-kind="quiz">Quiz me</button
+              ><button class="tool" data-kind="flashcards">Flashcards</button
+              ><button class="tool" data-kind="plan">Revision plan</button
+              ><button class="tool" data-kind="shortnotes">Short notes</button
+              ><button class="tool" data-kind="essay">Essay helper</button
+              ><button class="tool" data-kind="chat">AI tutor chat</button>
+            </div>
+            <button id="generate" class="primary">Generate study notes →</button
+            ><label>Take or upload a question photo</label
+            ><input
+              id="photo-file"
+              type="file"
+              accept="image/*"
+              capture="environment"
+            /><button id="solve" class="secondary">
+              Scan photo & explain answer
+            </button>
+          </article>
+          <article class="panel output">
+            <div class="out-head">
+              <h3 id="result-title">Ready when you are</h3>
+              <button id="copy">Copy</button><button id="save">Save</button
+              ><button id="share">Share</button>
+            </div>
+            <div id="result">
+              Choose a tool, enter your topic, then generate your study
+              material.
+            </div>
+            <p id="status" role="status"></p>
+          </article>
+        </section>
+        <nav class="workspace-tabs">
+          <button data-jump="library">Library</button
+          ><button data-jump="planner">Planner</button
+          ><button data-jump="meetings">Teacher meetings</button
+          ><button data-jump="settings">Settings</button>
+        </nav>
+        <section class="extra-grid">
+          <article class="panel" id="library">
+            <h3>📚 My Library</h3>
+            <input id="search" placeholder="Search saved materials" />
+            <div id="saved-list">No saved notes yet.</div>
+          </article>
+          <article class="panel" id="planner">
+            <h3>▦ Study planner</h3>
+            <input id="task-subject" placeholder="Subject" /><input
+              id="task-name"
+              placeholder="Task or topic"
+            /><input id="task-date" type="date" /><button
+              id="add-task"
+              class="secondary"
+            >
+              ＋ Add task
+            </button>
+            <div id="tasks"></div>
+            <button id="export" class="secondary">Export CSV</button>
+          </article>
+          <article class="panel" id="meetings">
+            <h3>🎥 Teacher meetings</h3>
+            <input id="meeting-name" placeholder="Meeting name" /><input
+              id="meeting-url"
+              type="url"
+              placeholder="https:// Zoom or Meet link"
+            /><button id="add-meeting" class="secondary">
+              Save meeting link
+            </button>
+            <div id="meeting-list"></div>
+          </article>
+          <article class="panel" id="settings">
+            <h3>Settings</h3>
+            <button id="smaller" class="secondary">A− Smaller</button
+            ><button id="larger" class="secondary">A＋ Larger</button>
+            <p class="hint">
+              Saved notes and planner entries stay in this browser on this
+              device. AI tools require internet access.
+            </p>
+          </article>
+        </section>
+        <footer>
+          StudySmart <span>Learn smarter. Build your future.</span>
+        </footer>
+      </main>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

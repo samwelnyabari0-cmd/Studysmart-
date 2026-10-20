@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Generate and save study notes",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": ["AI study generation", "saved library"],
+    "description": "Checks notes can be generated and saved for later.",
+    "steps": [
+      "Enter a topic",
+      "Generate study notes",
+      "Tap Save and confirm the library entry appears"
+    ],
+    "expected": "Generated notes appear and are listed in My Library."
+  },
+  {
+    "name": "Add and export a planner task",
+    "viewport": "desktop",
+    "covers": ["study planner", "CSV export"],
+    "description": "Checks a planner task can be saved and exported.",
+    "steps": ["Enter subject and task", "Add task", "Tap Export CSV"],
+    "expected": "Task appears in planner and a CSV download starts."
+  },
+  {
+    "name": "Photo solver validates missing image",
+    "viewport": "mobile",
+    "covers": ["photo question solving", "upload validation"],
+    "description": "Checks photo solver prompts for an image when none is selected.",
+    "steps": ["Leave photo upload empty", "Tap Scan photo and explain answer"],
+    "expected": "A prompt asks the student to upload a photo."
+  },
+  {
+    "name": "Save teacher meeting link",
+    "viewport": "mobile",
+    "covers": ["teacher meeting links", "HTTPS validation"],
+    "description": "Checks HTTPS teacher meeting links can be saved.",
+    "steps": ["Enter an HTTPS meeting URL", "Save meeting link"],
+    "expected": "Meeting link appears in the meeting list."
+  }
+]
